@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fffafc;
+    color: #333;
+    scroll-behavior: smooth;
+  }
+  
+  canvas#flowerCanvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+  }
+  
+  .hero {
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .typing {
+    font-size: 2.5rem;
+    font-family: 'Pacifico', cursive;
+    border-right: .15em solid white;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(40, end) forwards, blink .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
+  
+  .gallery {
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .gallery h2 {
+    margin-bottom: 20px;
+  }
+  
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .photos img {
+    width: 200px;
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .photos img:hover {
+    transform: scale(1.05);
+  }
+  
+  .message {
+    padding: 40px 20px;
+    background: #fff0f6;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  footer {
+    background: #ffeaf4;
+    padding: 20px;
+    text-align: center;
+    font-style: italic;
+  }
+  .carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  
+  .carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+  }
+  
+  .carousel img {
+    min-width: 100%;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .popup-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+  
+  .popup-overlay.show {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup-box {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 300px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    animation: popin 0.4s ease;
+  }
+  
+  .popup-box button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background: #ff8fab;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  @keyframes popin {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+  
+  
+  
+  .nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .nav.prev {
+    left: 10px;
+  }
+  
+  .nav.next {
+    right: 10px;
+  }
+  
+  
+  @media (max-width: 600px) {
+    .typing {
+      font-size: 1.6rem;
+    }
+  
+    .photos img {
+      width: 140px;
+    }
+  
+    .message {
+      font-size: 1rem;
+    }
+  }
+  
