@@ -19,6 +19,20 @@
     pointer-events: none;
   }
   
+  .gif-wrapper {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .gif-wrapper img {
+    width: 90%;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+
   .hero {
     background: linear-gradient(45deg, #ff9a9e, #fad0c4);
     padding: 60px 20px;
